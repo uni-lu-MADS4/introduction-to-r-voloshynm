@@ -14,7 +14,7 @@ format: html
 c('A', 'B', 'C')
 ```
 > Your answer as text
-As letters are char characters, we use single quotes. However in fact they are stored as strings.
+As letters are char characters, we use quotes (single or double, doesn't matter) when setting the vector.
 
 
 * Assign the vector to a variable `my_letters`
@@ -146,9 +146,9 @@ calc_deviations <- function(x) {
   if (!is.numeric(x)) {
     stop("Input must be a numeric vector")
   }
-  mean_value <- mean(x, na.rm = TRUE)
-  median_value <- median(x, na.rm = TRUE)
-  sd_value <- sd(x, na.rm = TRUE)
+  mean_value <- mean(x)
+  median_value <- median(x)
+  sd_value <- sd(x, na)
   
   return(list(mean_value, median_value, sd_value))
 }
@@ -164,7 +164,7 @@ The output of `c('1' , "a", NA, "2", NA)` should be 2.
 
 ```{r}
 # Your answer in code
-
+c('1' , "a", NA, "2", NA) %>% is.na %>% sum()
 
 
 ```
